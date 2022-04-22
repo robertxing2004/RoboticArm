@@ -1,0 +1,18 @@
+#requirements needed to run this program
+
+Processing (Backend)
+- gab.OpenCV
+- Processing.Video
+- java.awt
+
+Processing (Frontend)
+- add stuff here guys
+
+
+Processing (Hardware Control)
+- Serial
+
+Arduino:
+- Servo 
+- Stepper
+- Software Serial

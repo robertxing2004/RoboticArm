@@ -1,5 +1,8 @@
 #requirements needed to run this program
 
+PROCESSING 4:
+The video module does not work with processing 3.
+
 Processing (Backend)
 - gab.OpenCV
 - Processing.Video

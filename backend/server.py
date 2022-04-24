@@ -1,21 +1,32 @@
 import socket
 
-print("ok") 
-
-host = socket.gethostname()
-port = 50000
-
-print(host)
+host = '127.0.0.1'
+port = 50001
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((host, port)) # ip and port in tuple
 server.listen(5)
+
+
 connection, address = server.accept()
 print("Connection established with", address)
 
+# this section receives the data from processing
 while True:
     data = connection.recv(1024)
+    data = data.decode()
     if not data: 
         break
-    print(data.decode("utf-8")) # Paging Python!
+    
+    if data == "snap":
+        print("Taking Pic")
+
+        # after we receive the signal, take a picture, and process it
+        # we should get an average x value here
+        # send it back to processing 
+
+        xLocation = '100'; # send this to processing
+        connection.send(xLocation.encode())
+
 connection.close()
+        

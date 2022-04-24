@@ -3,25 +3,29 @@ import g4p_controls.*;
 
 Client myClient;
 
+Server server;
+
 boolean send;
 String dataIn;
-byte[] byteBuffer = new byte[10];
+byte[] byteBuffer = new byte[1024];
 
 void setup(){
   size(200, 200);
   createGUI();
   customGUI();
   
-  myClient = new Client(this, "Stevens-MacBook-Pro.local", 50000);
+  myClient = new Client(this, "127.0.0.1", 50001);
 }
 
 void draw(){
   if (send == true){
-    // send a snapshot, and wait for a response
     myClient.write("snap");
-    send = false;
+    println("Data successfully sent. Waiting for response");
     
-    // wait for a response
+    String data = myClient.readStringUntil('\n');
+    println(data);
+    
+    send = false;
   } 
 }
 

@@ -1,19 +1,15 @@
 #requirements needed to run this program
 
-PROCESSING 4:
-The video module does not work with processing 3.
-
-Processing (Backend)
-- gab.OpenCV
-- Processing.Video
-- java.awt
-
 Processing (Frontend)
-- add stuff here guys
+- G4P UI Design Tool
+- Serial 
 
-
-Processing (Hardware Control)
-- Serial
+Python (Backend)
+- Socket
+- PySerial
+- OpenCV
+- CMake
+- GCC
 
 Arduino:
 - Servo 

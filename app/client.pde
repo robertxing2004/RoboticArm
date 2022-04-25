@@ -1,4 +1,3 @@
-
 void clientActions(){
   if (send == true){
     myClient.write("snap");

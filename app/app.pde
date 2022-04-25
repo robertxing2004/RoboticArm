@@ -9,9 +9,9 @@ byte[] byteBuffer = new byte[1024];
 
 // variables for the front end stuff
 
-void setup(){
+public void setup(){
   // GUI code - front end guys 
-  size(200, 200);
+  size(200, 200, JAVA2D);
   createGUI();
   customGUI();
   
@@ -19,7 +19,8 @@ void setup(){
   myClient = new Client(this, "127.0.0.1", 50001);
 }
 
-void draw(){
+public void draw(){
+  background(255);
   clientActions();
 }
 

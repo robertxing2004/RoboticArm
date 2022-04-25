@@ -14,9 +14,9 @@
  * =========================================================
  */
 
-public void button1_click1(GButton source, GEvent event) { //_CODE_:button1:473834:
+public void button1_click1(GButton source, GEvent event) { //_CODE_:button1:599539:
   send = true;
-} //_CODE_:button1:473834:
+} //_CODE_:button1:599539:
 
 
 
@@ -27,8 +27,8 @@ public void createGUI(){
   G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
   G4P.setMouseOverEnabled(false);
   surface.setTitle("Sketch Window");
-  button1 = new GButton(this, 40, 80, 118, 30);
-  button1.setText("Take Snapshot");
+  button1 = new GButton(this, 60, 85, 80, 30);
+  button1.setText("penis");
   button1.addEventHandler(this, "button1_click1");
 }
 

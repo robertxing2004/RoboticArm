@@ -7,6 +7,6 @@ void clientActions(){
     String data = myClient.readStringUntil('\n');
     println(data);
     
-    send = false;
+    send = false; 
   } 
 }

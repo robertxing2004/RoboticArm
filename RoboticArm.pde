@@ -1,32 +1,26 @@
 import processing.net.*;
 import g4p_controls.*;
 
+// variables for the backend server stuff
 Client myClient;
-
-Server server;
-
 boolean send;
 String dataIn;
 byte[] byteBuffer = new byte[1024];
 
+// variables for the front end stuff
+
 void setup(){
+  // GUI code - front end guys 
   size(200, 200);
   createGUI();
   customGUI();
   
+  // initializing the client
   myClient = new Client(this, "127.0.0.1", 50001);
 }
 
 void draw(){
-  if (send == true){
-    myClient.write("snap");
-    println("Data successfully sent. Waiting for response");
-    
-    String data = myClient.readStringUntil('\n');
-    println(data);
-    
-    send = false;
-  } 
+  clientActions();
 }
 
 // Use this method to add additional statements

@@ -51,12 +51,8 @@ while True:
         # we should get an average x value here
         # send it back to processing 
 
-        xLocation = '100' + '\n'; # placeholder for xLocation
-        connection.send(xLocation.encode()) # server response to the request
-
-        data = ""  #resets data to be nothing so the while loop continues
-    
-    # cv2.imshow("test", frame)
+        xLocation = '42069' + '\n'; # send this to processing
+        connection.send(xLocation.encode())
 
 connection.close()
 

@@ -15,6 +15,7 @@
  */
 
 public void button1_click1(GButton source, GEvent event) { //_CODE_:button1:599539:
+  
   send = true;
 } //_CODE_:button1:599539:
 

@@ -2,6 +2,8 @@ import socket
 import cv2
 import time
 
+# from color_detection import *
+
 # this function takes the snapshot, very self explanatory
 def takeSnapshot():
     img_name = "opencv_frame.png"
@@ -25,8 +27,6 @@ print("Connection established with", address)
 cam = cv2.VideoCapture(0)
 cv2.namedWindow("camera")
 
-
-
 # ----------------------
 # This is the main loop
 # ----------------------
@@ -49,8 +49,8 @@ while True:
 
         # after we receive the signal, take a picture, and process it
         # we should get an average x value here
-        # send it back to processing 
-
+        # send it back to processing - program below
+        
         xLocation = '42069' + '\n'; # send this to processing
         connection.send(xLocation.encode())
 
@@ -58,4 +58,3 @@ connection.close()
 
 cam.release()
 cv2.destroyAllWindows()
-        

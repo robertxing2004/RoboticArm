@@ -7,6 +7,9 @@ boolean send;
 String dataIn;
 byte[] byteBuffer = new byte[1024];
 
+String data;
+int xLocation;
+
 // variables for the front end stuff
 
 public void setup(){

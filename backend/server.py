@@ -1,6 +1,7 @@
 import socket
 import cv2
 import time
+from color_detection import *
 
 # from color_detection import *
 
@@ -47,9 +48,7 @@ while True:
         print("Taking Pic")
         takeSnapshot()
 
-        # after we receive the signal, take a picture, and process it
-        # we should get an average x value here
-        # send it back to processing - program below
+        print(processImage())
         
         xLocation = '69' + 'p'; # send this to processing
         connection.send(xLocation.encode())
@@ -57,4 +56,5 @@ while True:
 connection.close()
 
 cam.release()
+print("client disconnected")
 cv2.destroyAllWindows()

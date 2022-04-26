@@ -3,7 +3,10 @@ void clientActions(){
     myClient.write("snap");
     println("Data successfully sent. Waiting for response");
     
-    String data = myClient.readStringUntil('\n');
+    data = myClient.readStringUntil('\n');
+
+    xLocation = int(data);
+
     println(data);
     
     send = false; 

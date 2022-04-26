@@ -13,6 +13,13 @@ mask = cv2.inRange(imageHsv, lowerRange, upperRange)
 
 contours, hierchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
+if len(contours) != 0:
+    for contour in contours:
+        if cv2.contourArea(contour) > 500: #threshold
+            x, y, w, h = cv2.boundingRect(contour)
+            cv2.rectangle(image, (x,y), (x+w, y+h), (0,0,255), 2)
+
+
 #optionals
 cv2.imshow("Image", image)
 cv2.imshow("Mask", mask)

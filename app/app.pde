@@ -10,6 +10,8 @@ byte[] byteBuffer = new byte[1024];
 String data;
 int xLocation;
 
+int picCounter;
+
 // variables for the front end stuff
 
 public void setup(){

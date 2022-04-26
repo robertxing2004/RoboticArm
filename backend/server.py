@@ -51,7 +51,7 @@ while True:
         # we should get an average x value here
         # send it back to processing - program below
         
-        xLocation = '42069' + '\n'; # send this to processing
+        xLocation = '69' + 'p'; # send this to processing
         connection.send(xLocation.encode())
 
 connection.close()

@@ -9,9 +9,9 @@ String dataIn;
 byte[] byteBuffer = new byte[1024];
 
 String data;
-int xLocation = 350;
+int xLocation = 356; 
 
-int picCounter; 
+int picCounter;
 
 // variables for the front end stuff
 
@@ -27,7 +27,7 @@ public void setup(){
 
 public void draw(){
   background(255);
-  clientActions();
+  //clientActions();
 }
 
 // Use this method to add additional statements

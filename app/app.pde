@@ -9,7 +9,7 @@ String dataIn;
 byte[] byteBuffer = new byte[1024];
 
 String data;
-int xLocation = 350;
+int xLocation;
 
 int picCounter; 
 
@@ -27,7 +27,8 @@ public void setup(){
 
 public void draw(){
   background(255);
-  clientActions();
+  // clientActions();
+  testingClientActions();
 }
 
 // Use this method to add additional statements

@@ -27,3 +27,16 @@ void clientActions(){
     send = false;
   } 
 }
+
+void testingClientActions(){
+  if (send == true){
+    xLocation = 300;
+
+    // update slider code
+    
+
+    // this is to break the loop when code is done
+    send = false;
+
+  }
+}

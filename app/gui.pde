@@ -40,10 +40,10 @@ public void createGUI(){
   G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
   G4P.setMouseOverEnabled(false);
   surface.setTitle("Sketch Window");
-  camButton = new GButton(this, 55, 20, 80, 30);
+  camButton = new GButton(this, 55, 70, 80, 30);
   camButton.setText("Take Snapshot");
   camButton.addEventHandler(this, "camButtonClicked");
-  location = new GCustomSlider(this, 47, 76, 100, 40, "grey_blue");
+  location = new GCustomSlider(this, 47, 130, 100, 40, "grey_blue");
   location.setShowValue(true);
   location.setShowLimits(true);
   location.setLimits(0, 0, 2000);
@@ -51,9 +51,13 @@ public void createGUI(){
   location.setNumberFormat(G4P.INTEGER, 0);
   location.setOpaque(false);
   location.addEventHandler(this, "locationChanged");
-  confirmButton = new GButton(this, 55, 141, 80, 30);
+  confirmButton = new GButton(this, 55, 200, 80, 30);
   confirmButton.setText("Confirm Move");
   confirmButton.addEventHandler(this, "confirmButtonClicked");
+  label1 = new GLabel(this, 45, 28, 100, 20);
+  label1.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
+  label1.setText("StrongArm command center");
+  label1.setOpaque(false);
 }
 
 // Variable declarations 
@@ -61,3 +65,4 @@ public void createGUI(){
 GButton camButton; 
 GCustomSlider location; 
 GButton confirmButton; 
+GLabel label1; 

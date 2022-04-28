@@ -34,8 +34,10 @@ void testingClientActions(){
 
     // update slider code
     
+    location.setValue(xLocation);
 
     // this is to break the loop when code is done
+    
     send = false;
 
   }

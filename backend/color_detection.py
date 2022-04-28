@@ -22,9 +22,9 @@ def processImage():
                 cv2.rectangle(image, (x,y), (x+w, y+h), (0,0,255), 2)
                 averageX = x + w/2
                 averageX = int(averageX)
-                averageY = y + h/2
-                averageY = int(averageY)
-                return (averageX, averageY)
+                # averageY = y + h/2
+                # averageY = int(averageY)
+                return (averageX)
 
     else:
         return(0)

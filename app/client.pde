@@ -20,8 +20,7 @@ void clientActions(){
     
     // update slider code 
     
-    
-    
+
     
     // your mom
     

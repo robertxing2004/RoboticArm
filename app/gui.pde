@@ -21,13 +21,14 @@ public void camButtonClicked(GButton source, GEvent event) { //_CODE_:camButton:
 
 public void locationChanged(GCustomSlider source, GEvent event) { //_CODE_:location:315396:
   xLocation = location.getValueI();
-  if (sendToHardware) {
-    println(xLocation);
-  }
 } //_CODE_:location:315396:
 
 public void confirmButtonClicked(GButton source, GEvent event) { //_CODE_:confirmButton:217314:
   sendToHardware = true;
+    if (sendToHardware) {
+    println(xLocation);
+    sendToHardware = false;
+  }
 } //_CODE_:confirmButton:217314:
 
 
@@ -45,7 +46,7 @@ public void createGUI(){
   location = new GCustomSlider(this, 47, 76, 100, 40, "grey_blue");
   location.setShowValue(true);
   location.setShowLimits(true);
-  location.setLimits(0, 0, 100);
+  location.setLimits(0, 0, 2000);
   location.setShowTicks(true);
   location.setNumberFormat(G4P.INTEGER, 0);
   location.setOpaque(false);

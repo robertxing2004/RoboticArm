@@ -4,6 +4,7 @@ import g4p_controls.*;
 // variables for the backend server stuff
 Client myClient;
 boolean send;
+boolean sendToHardware;
 String dataIn;
 byte[] byteBuffer = new byte[1024];
 

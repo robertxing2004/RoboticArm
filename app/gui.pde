@@ -20,11 +20,12 @@ public void camButtonClicked(GButton source, GEvent event) { //_CODE_:camButton:
 } //_CODE_:camButton:599539:
 
 public void locationChanged(GCustomSlider source, GEvent event) { //_CODE_:location:315396:
-  println("custom_slider1 - GCustomSlider >> GEvent." + event + " @ " + millis());
+  xLocation = location.getValueI();
+  println(xLocation);
 } //_CODE_:location:315396:
 
 public void confirmButtonClicked(GButton source, GEvent event) { //_CODE_:confirmButton:217314:
-  println("confirmButton - GButton >> GEvent." + event + " @ " + millis());
+  sendToHardware = true;
 } //_CODE_:confirmButton:217314:
 
 

@@ -1,6 +1,8 @@
 import cv2
 import numpy as np
 
+averageX = 0
+
 def processImage():
     # this will be a function, called when needed
     image = cv2.imread("opencv_frame.png")
@@ -24,10 +26,9 @@ def processImage():
                 averageX = int(averageX)
                 # averageY = y + h/2
                 # averageY = int(averageY)
-                return (averageX)
 
     else:
-        return(0)
+        pass
 
     #optionals
     cv2.imshow("Image", image)

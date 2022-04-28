@@ -23,7 +23,6 @@ server.listen(5)
 connection, address = server.accept()
 print("Connection established with", address)
 
-
 # after there is a client found, opencv turns the camera on
 cam = cv2.VideoCapture(0)
 cv2.namedWindow("camera")
@@ -47,10 +46,9 @@ while True:
         ret, frame = cam.read()
         print("Taking Pic")
         takeSnapshot()
-
-        print(processImage())
+        processImage()
         
-        xLocation = '69' + 'p'; # send this to processing
+        xLocation = averageX + 'p'; # send this to processing
         connection.send(xLocation.encode())
 
 connection.close()

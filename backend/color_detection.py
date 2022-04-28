@@ -26,9 +26,10 @@ def processImage():
                 averageX = int(averageX)
                 # averageY = y + h/2
                 # averageY = int(averageY)
+                return (averageX)
 
     else:
-        pass
+        return (average)
 
     #optionals
     cv2.imshow("Image", image)

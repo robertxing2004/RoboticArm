@@ -17,7 +17,7 @@ void clientActions(){
     xLocation = int(data);
     println(xLocation);
     picCounter = picCounter + 1; 
-    
+     
     // update slider code 
     
 

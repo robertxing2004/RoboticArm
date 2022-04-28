@@ -29,7 +29,7 @@ def processImage():
                 return (averageX)
 
     else:
-        return (average)
+        return (averageX)
 
     #optionals
     cv2.imshow("Image", image)

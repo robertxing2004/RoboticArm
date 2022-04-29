@@ -20,25 +20,10 @@ void clientActions(){
      
     // update slider code 
     
-
+    location.setValue(xLocation);
     
     // your mom
     
     send = false;
   } 
-}
-
-void testingClientActions(){
-  if (send == true){
-    xLocation = 300;
-
-    // update slider code
-    
-    location.setValue(xLocation);
-
-    // this is to break the loop when code is done
-    
-    send = false;
-
-  }
 }

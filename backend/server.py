@@ -1,9 +1,11 @@
 import socket
 import cv2
 import time
-from color_detection import *
+from color_detection import processImage
 
 # from color_detection import *
+
+averageX = 0
 
 # this function takes the snapshot, very self explanatory
 def takeSnapshot():
@@ -48,7 +50,7 @@ while True:
         takeSnapshot()
         processImage()
         
-        xLocation = averageX + 'p'; # send this to processing
+        xLocation = str(averageX) + 'p'; # send this to processing
         connection.send(xLocation.encode())
 
 connection.close()

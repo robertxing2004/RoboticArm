@@ -15,7 +15,6 @@
  */
 
 public void camButtonClicked(GButton source, GEvent event) { //_CODE_:camButton:599539:
-  
   send = true;
 } //_CODE_:camButton:599539:
 
@@ -25,7 +24,7 @@ public void locationChanged(GCustomSlider source, GEvent event) { //_CODE_:locat
 
 public void confirmButtonClicked(GButton source, GEvent event) { //_CODE_:confirmButton:217314:
   sendToHardware = true;
-    if (sendToHardware) {
+  if (sendToHardware == true) {
     println(xLocation);
     sendToHardware = false;
   }

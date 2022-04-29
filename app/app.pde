@@ -27,8 +27,7 @@ public void setup(){
 
 public void draw(){
   background(255);
-  // clientActions();
-  testingClientActions();
+  clientActions();
 }
 
 // Use this method to add additional statements

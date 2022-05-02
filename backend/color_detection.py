@@ -17,15 +17,16 @@ contours, hierchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_S
 if len(contours) != 0:
     for contour in contours:
         if cv2.contourArea(contour) > 500: #threshold
+            print ("stuff is being colored")
             x, y, w, h = cv2.boundingRect(contour)
             cv2.rectangle(image, (x,y), (x+w, y+h), (0,0,255), 2)
             averageX = x + w/2
             averageX = int(averageX)
-            # averageY = y + h/2
-            # averageY = int(averageY)
             
-            cv2.imshow("Image", image)
-            cv2.imshow("Mask", mask)
+cv2.imshow("Image", image)
+cv2.imshow("Mask", mask)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
 

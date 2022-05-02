@@ -30,5 +30,15 @@ void clientActions(){
 
 
 void confirmActions(){
-
+  
+  if (sendToHardware  == true){
+    
+    newLocation = str(xLocation) + "p";
+    
+    myClient.write(xLocation);
+    println("command successfully sent");
+    
+    sendToHardware = false;
+  }
+  
 }

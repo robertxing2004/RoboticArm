@@ -4,6 +4,7 @@ import time
 from color_detection import processImage
 
 averageX = 0
+newLocation = ""
 
 # this function takes the snapshot, very self explanatory
 def takeSnapshot():
@@ -49,6 +50,11 @@ while True:
         
         xLocation = str(averageX) + 'p'; # send this to processing
         connection.send(xLocation.encode())
+
+    elif data == "move":
+
+        while newLocation
+        newLocation = connection.recv(1024)
 
 connection.close()
 

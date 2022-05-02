@@ -52,9 +52,9 @@ while True:
         connection.send(xLocation.encode())
 
     elif data == "move":
-
-        while newLocation
-        newLocation = connection.recv(1024)
+        # this while loop may not be needed, remove if necessary
+        while newLocation == "":
+            newLocation = connection.recv(1024)
 
 connection.close()
 

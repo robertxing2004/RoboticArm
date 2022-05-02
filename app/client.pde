@@ -35,6 +35,10 @@ void confirmActions(){
     
     newLocation = str(xLocation) + "p";
     
+    myClient.write("move");
+    
+    delay(100);
+    
     myClient.write(xLocation);
     println("command successfully sent");
     

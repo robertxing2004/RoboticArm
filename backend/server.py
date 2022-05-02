@@ -55,6 +55,8 @@ while True:
         # this while loop may not be needed, remove if necessary
         while newLocation == "":
             newLocation = connection.recv(1024)
+        
+        # call the hardware function here (sean)
 
 connection.close()
 

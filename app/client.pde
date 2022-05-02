@@ -27,3 +27,8 @@ void clientActions(){
     send = false;
   } 
 }
+
+
+void confirmActions(){
+
+}

@@ -21,6 +21,9 @@ public void camButtonClicked(GButton source, GEvent event) { //_CODE_:camButton:
 public void confirmButtonClicked(GButton source, GEvent event) { //_CODE_:confirmButton:217314:
   sendToHardware = true;
   if (sendToHardware == true) {
+    
+    // ADD PART THAT SENDS TO HARDWARE SOCKET   
+    
     println(xLocation);
     sendToHardware = false;
   }

@@ -15,3 +15,5 @@ Arduino:
 - Servo 
 - Stepper
 - Software Serial
+
+https://www.amazon.ca/s?k=KS0320+Keyestudio+Electromagnet+Module&crid=2UI7HZB1FR8T&sprefix=ks0320+keyestudio+electromagnet+module%2Caps%2C110&ref=nb_sb_noss

@@ -3,8 +3,6 @@ import cv2
 import time
 from color_detection import processImage
 
-# from color_detection import *
-
 averageX = 0
 
 # this function takes the snapshot, very self explanatory
@@ -32,7 +30,6 @@ cv2.namedWindow("camera")
 # ----------------------
 # This is the main loop
 # ----------------------
-
 while True:
 
     # looks for a request from the client

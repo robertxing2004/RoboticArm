@@ -38,20 +38,24 @@ public void createGUI(){
   surface.setTitle("Sketch Window");
   camButton = new GButton(this, 55, 70, 80, 30);
   camButton.setText("Take Snapshot");
+  camButton.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   camButton.addEventHandler(this, "camButtonClicked");
   confirmButton = new GButton(this, 55, 200, 80, 30);
   confirmButton.setText("Confirm Move");
+  confirmButton.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   confirmButton.addEventHandler(this, "confirmButtonClicked");
-  label1 = new GLabel(this, 45, 27, 100, 20);
+  label1 = new GLabel(this, 50, 25, 100, 20);
   label1.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
-  label1.setText("StrongArm command center");
+  label1.setText("StrongArm Command Interface");
+  label1.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   label1.setOpaque(false);
-  LocationSlider = new GSlider(this, 29, 130, 147, 40, 10.0);
+  LocationSlider = new GSlider(this, 25, 130, 147, 40, 10.0);
   LocationSlider.setShowValue(true);
   LocationSlider.setShowLimits(true);
   LocationSlider.setLimits(0.0, 0.0, 2000.0);
   LocationSlider.setShowTicks(true);
   LocationSlider.setNumberFormat(G4P.DECIMAL, 2);
+  LocationSlider.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   LocationSlider.setOpaque(false);
   LocationSlider.addEventHandler(this, "LocSliMoved");
 }

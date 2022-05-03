@@ -1,6 +1,6 @@
 import socket
 
-host = '127.0.0.1'
+host = '172.26.139.51'
 port = 50001
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

@@ -57,7 +57,14 @@ while True:
         while newLocation == "":
             newLocation = connection.recv(1024)
         
+        newLocation.decode()
+        
         # call the hardware function here (sean)
+        print(newLocation)
+
+
+        #resets the newLocation variable
+        newLocation = ""
 
 connection.close()
 

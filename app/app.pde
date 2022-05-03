@@ -9,7 +9,7 @@ String dataIn;
 byte[] byteBuffer = new byte[1024];
 
 String data;
-int xLocation;
+int xLocation = 489;
 
 String newLocation;
 
@@ -19,7 +19,7 @@ int picCounter;
 
 public void setup(){
   // GUI code - front end guys 
-  size(200, 250, JAVA2D);
+  size(248, 344, JAVA2D);
   createGUI();
   customGUI();
   

@@ -27,6 +27,14 @@ public void LocSliMoved(GSlider source, GEvent event) { //_CODE_:LocationSlider:
   xLocation = LocationSlider.getValueI();
 } //_CODE_:LocationSlider:479904:
 
+public void button1_click1(GButton source, GEvent event) { //_CODE_:button1:686750:
+  println("button1 - GButton >> GEvent." + event + " @ " + millis());
+} //_CODE_:button1:686750:
+
+synchronized public void win_draw1(PApplet appc, GWinData data) { //_CODE_:window1:321259:
+  appc.background(230);
+} //_CODE_:window1:321259:
+
 
 
 // Create all the GUI controls. 
@@ -36,20 +44,20 @@ public void createGUI(){
   G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
   G4P.setMouseOverEnabled(false);
   surface.setTitle("Sketch Window");
-  camButton = new GButton(this, 55, 70, 80, 30);
+  camButton = new GButton(this, 26, 110, 196, 37);
   camButton.setText("Take Snapshot");
   camButton.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   camButton.addEventHandler(this, "camButtonClicked");
-  confirmButton = new GButton(this, 55, 200, 80, 30);
+  confirmButton = new GButton(this, 26, 230, 196, 37);
   confirmButton.setText("Confirm Move");
   confirmButton.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   confirmButton.addEventHandler(this, "confirmButtonClicked");
-  label1 = new GLabel(this, 50, 25, 100, 20);
+  label1 = new GLabel(this, 18, 15, 212, 20);
   label1.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
-  label1.setText("StrongArm Command Interface");
+  label1.setText("StrongArm Command Centre");
   label1.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   label1.setOpaque(false);
-  LocationSlider = new GSlider(this, 25, 130, 147, 40, 10.0);
+  LocationSlider = new GSlider(this, 26, 170, 196, 37, 10.0);
   LocationSlider.setShowValue(true);
   LocationSlider.setShowLimits(true);
   LocationSlider.setLimits(0.0, 0.0, 2000.0);
@@ -58,6 +66,15 @@ public void createGUI(){
   LocationSlider.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   LocationSlider.setOpaque(false);
   LocationSlider.addEventHandler(this, "LocSliMoved");
+  button1 = new GButton(this, 25, 50, 196, 37);
+  button1.setText("Face text");
+  button1.setLocalColorScheme(GCScheme.CYAN_SCHEME);
+  button1.addEventHandler(this, "button1_click1");
+  window1 = GWindow.getWindow(this, "Window title", 0, 0, 240, 120, JAVA2D);
+  window1.noLoop();
+  window1.setActionOnClose(G4P.KEEP_OPEN);
+  window1.addDrawHandler(this, "win_draw1");
+  window1.loop();
 }
 
 // Variable declarations 
@@ -66,3 +83,5 @@ GButton camButton;
 GButton confirmButton; 
 GLabel label1; 
 GSlider LocationSlider; 
+GButton button1; 
+GWindow window1;

@@ -20,7 +20,7 @@ void clientActions(){
      
     // update slider code 
     
-    location.setValue(xLocation);
+    LocationSlider.setValue(xLocation);
     
     // your mom
     

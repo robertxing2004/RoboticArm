@@ -9,7 +9,7 @@ String dataIn;
 byte[] byteBuffer = new byte[1024];
 
 String data;
-int xLocation;
+int xLocation = 489;
 
 String newLocation;
 

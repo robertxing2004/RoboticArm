@@ -30,6 +30,7 @@ public void setup(){
 public void draw(){
   background(255);
   clientActions();
+  confirmActions();
 }
 
 // Use this method to add additional statements

@@ -57,11 +57,17 @@ while True:
         while newLocation == "":
             newLocation = connection.recv(1024)
         
-        newLocation.decode()
+        newLocation = newLocation.decode()
+
+        if not newLocation:
+            break
         
+        # this takes newLocation and removes p
+        newLocationArray = list(newLocation)
+
+
         # call the hardware function here (sean)
         print(newLocation)
-
 
         #resets the newLocation variable
         newLocation = ""

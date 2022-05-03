@@ -14,7 +14,8 @@ def takeSnapshot():
 
 
 # setting up the server and looking for a client
-host = '127.0.0.1'
+host = socket.gethostbyname(socket.gethostname())
+print(host)
 port = 50001
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

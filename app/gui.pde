@@ -20,7 +20,6 @@ public void camButtonClicked(GButton source, GEvent event) { //_CODE_:camButton:
 
 public void confirmButtonClicked(GButton source, GEvent event) { //_CODE_:confirmButton:217314:
   sendToHardware = true;
-  confirmActions();
 } //_CODE_:confirmButton:217314:
 
 public void LocSliMoved(GSlider source, GEvent event) { //_CODE_:LocationSlider:479904:

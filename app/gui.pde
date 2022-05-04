@@ -74,7 +74,7 @@ public void createGUI(){
   G4P.messagesEnabled(false);
   G4P.setGlobalColorScheme(GCScheme.CYAN_SCHEME);
   G4P.setMouseOverEnabled(false);
-  surface.setTitle("Sketch Window");
+  surface.setTitle("StrongArm Command Centre");
   camButton = new GButton(this, 26, 110, 196, 37);
   camButton.setText("Take Snapshot");
   camButton.addEventHandler(this, "camButtonClicked");
@@ -96,14 +96,13 @@ public void createGUI(){
   Settings = new GButton(this, 25, 50, 196, 37);
   Settings.setText("Settings");
   Settings.addEventHandler(this, "SettingsClicked");
-  window1 = GWindow.getWindow(this, "Window title", 0, 0, 248, 250, JAVA2D);
+  window1 = GWindow.getWindow(this, "Settings", 0, 0, 248, 250, JAVA2D);
   window1.noLoop();
-  window1.setVisible(false);
   window1.setActionOnClose(G4P.KEEP_OPEN);
   window1.addDrawHandler(this, "win_draw1");
   label2 = new GLabel(window1, 16, 15, 212, 20);
   label2.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
-  label2.setText("StrongArm Command Centre");
+  label2.setText("StrongArm Settings");
   label2.setOpaque(false);
   ConfigureIP = new GButton(window1, 26, 110, 196, 37);
   ConfigureIP.setText("Configure IP");
@@ -115,6 +114,7 @@ public void createGUI(){
   backButton.setText("Back");
   backButton.addEventHandler(this, "button1_click1");
   window1.loop();
+  window1.setVisible(false);
 }
 
 // Variable declarations 

@@ -39,7 +39,27 @@ public void ConfigureIPClicked(GButton source, GEvent event) { //_CODE_:Configur
 } //_CODE_:ConfigureIP:607197:
 
 public void CSDLopened(GDropList source, GEvent event) { //_CODE_:ColourScheme:900914:
-  println("ColourSchemeDL - GDropList >> GEvent." + event + " @ " + millis());
+  String themeColor = ColourScheme.getSelectedText();
+  
+  // changing global colour themes
+  if (themeColor.equals("Red"))
+    G4P.setGlobalColorScheme(GCScheme.RED_SCHEME);
+  else if (themeColor.equals("Green"))
+    G4P.setGlobalColorScheme(GCScheme.GREEN_SCHEME);
+  else if (themeColor.equals("Yellow"))
+    G4P.setGlobalColorScheme(GCScheme.YELLOW_SCHEME);
+  else if (themeColor.equals("Purple"))
+    G4P.setGlobalColorScheme(GCScheme.PURPLE_SCHEME);
+  else if (themeColor.equals("Orange"))
+    G4P.setGlobalColorScheme(GCScheme.ORANGE_SCHEME);
+  else if (themeColor.equals("Cyan"))
+    G4P.setGlobalColorScheme(GCScheme.CYAN_SCHEME);
+  else if (themeColor.equals("Blue"))
+    G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
+  else if (themeColor.equals("Gold"))
+    G4P.setGlobalColorScheme(GCScheme.GOLD_SCHEME);
+    
+    
 } //_CODE_:ColourScheme:900914:
 
 public void button1_click1(GButton source, GEvent event) { //_CODE_:backButton:350746:
@@ -58,14 +78,14 @@ public void createGUI(){
   camButton = new GButton(this, 26, 110, 196, 37);
   camButton.setText("Take Snapshot");
   camButton.addEventHandler(this, "camButtonClicked");
-  confirmButton = new GButton(this, 26, 230, 196, 37);
+  confirmButton = new GButton(this, 26, 250, 196, 37);
   confirmButton.setText("Confirm Move");
   confirmButton.addEventHandler(this, "confirmButtonClicked");
   label1 = new GLabel(this, 18, 15, 212, 20);
   label1.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
   label1.setText("StrongArm Command Centre");
   label1.setOpaque(false);
-  LocationSlider = new GSlider(this, 26, 170, 196, 37, 10.0);
+  LocationSlider = new GSlider(this, 26, 170, 196, 55, 10.0);
   LocationSlider.setShowValue(true);
   LocationSlider.setShowLimits(true);
   LocationSlider.setLimits(0.0, 0.0, 2000.0);
@@ -76,7 +96,7 @@ public void createGUI(){
   Settings = new GButton(this, 25, 50, 196, 37);
   Settings.setText("Settings");
   Settings.addEventHandler(this, "SettingsClicked");
-  window1 = GWindow.getWindow(this, "Window title", 0, 0, 248, 220, JAVA2D);
+  window1 = GWindow.getWindow(this, "Window title", 0, 0, 248, 250, JAVA2D);
   window1.noLoop();
   window1.setActionOnClose(G4P.KEEP_OPEN);
   window1.addDrawHandler(this, "win_draw1");
@@ -84,13 +104,13 @@ public void createGUI(){
   label2.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
   label2.setText("StrongArm Command Centre");
   label2.setOpaque(false);
-  ConfigureIP = new GButton(window1, 26, 50, 196, 37);
+  ConfigureIP = new GButton(window1, 26, 110, 196, 37);
   ConfigureIP.setText("Configure IP");
   ConfigureIP.addEventHandler(this, "ConfigureIPClicked");
-  ColourScheme = new GDropList(window1, 26, 110, 196, 180, 8, 10);
+  ColourScheme = new GDropList(window1, 26, 60, 196, 180, 8, 10);
   ColourScheme.setItems(loadStrings("list_900914"), 0);
   ColourScheme.addEventHandler(this, "CSDLopened");
-  backButton = new GButton(window1, 26, 155, 98, 37);
+  backButton = new GButton(window1, 26, 180, 98, 37);
   backButton.setText("Back");
   backButton.addEventHandler(this, "button1_click1");
   window1.loop();

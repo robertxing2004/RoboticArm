@@ -1,11 +1,11 @@
 import RPi.GPIO as GPIO
-import time
+from time import sleep
 GPIO.setwarnings(False)
-
 GPIO.setmode(GPIO.BCM)
 
 motor1 = (17, 4)
 motor2 = (27, 22)
+pickupMotor = (10, 9)
 
 GPIO.setup(motor1[0], GPIO.OUT)
 GPIO.setup(motor1[1], GPIO.OUT)
@@ -34,18 +34,24 @@ def move(pos):
     if (deltaPos > 0):  # if x is positive, turn pin 17 on for amount of seconds proportional to x
         moveLeft(motor1)
         moveRight(motor2)
-        time.sleep(PositionToTime(deltaPos))
+        sleep(PositionToTime(deltaPos))
         stop(motor1)
         stop(motor2)
     # Spin motor backwards
     elif (deltaPos < 0):  # if x is negative, turn pin 4 on for amount of seconds proportional to x
         moveRight(motor1)
         moveLeft(motor2)
-        time.sleep(PositionToTime(deltaPos))
+        sleep(PositionToTime(deltaPos))
         stop(motor1)
         stop(motor2)
 
     currentPos = pos
 
 def pickup():
-    pass
+    moveRight(pickupMotor)
+    sleep(0.5)
+    stop(pickupMotor)
+    sleep(0.5)
+    moveLeft(pickupMotor)
+    sleep(0.5)
+    stop(pickupMotor)

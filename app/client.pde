@@ -6,15 +6,13 @@ void clientActions(){
     myClient.write("snap");
     println("Data successfully sent. Waiting for response");
     
-    if (picCounter == 0){
-      data = "100";
-    }
-    else{
+    while (data == null){
       data = myClient.readStringUntil('p');
-      data = data.substring(0, data.length() - 1);
     }
     
+    data = data.substring(0, data.length() - 1);
     xLocation = int(data);
+    data = null;
     println(xLocation);
     picCounter = picCounter + 1; 
      
@@ -27,6 +25,9 @@ void clientActions(){
     send = false;
   } 
 }
+
+
+
 
 
 void confirmActions(){

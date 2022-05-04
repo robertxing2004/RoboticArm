@@ -22,7 +22,7 @@ def processImage():
                 averageX = x + w/2
                 averageX = int(averageX)
 
-                print(averageX)
-                
+                return (averageX)
+
 
 

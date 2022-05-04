@@ -1,76 +1,90 @@
 import socket
 import cv2
-import time
+from time import *
 from color_detection import processImage
 
 averageX = 0
 newLocation = ""
 
-# this function takes the snapshot, very self explanatory
+# ---------------------
+# FUNCTIONS FOR PROGRAM
+# ---------------------
+
 def takeSnapshot():
     img_name = "opencv_frame.png"
     cv2.imwrite(img_name, frame)
     print("snapshot taken")
 
+# ---------------------
+# SET UP SERVER
+# ---------------------
 
-# setting up the server and looking for a client
-host = socket.gethostbyname(socket.gethostname())
-print(host)
+# host = socket.gethostbyname(socket.gethostname())
+host  = '127.0.0.1'
 port = 50001
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind((host, port)) # ip and port in tuple
-server.listen(5)
+server.bind((host, port))
 
-connection, address = server.accept()
-print("Connection established with", address)
-
-# after there is a client found, opencv turns the camera on
 cam = cv2.VideoCapture(0)
 cv2.namedWindow("camera")
 
+
 # ----------------------
-# This is the main loop
+# MAIN LOOP
 # ----------------------
+
 while True:
 
-    # looks for a request from the client
-    data = connection.recv(1024) # this is like a loop
+    # NO CLIENT CONNECTED
+    server.listen(5)
+    connection, address = server.accept()
+    print("Connection established with", address)
 
-    # decodes data to ascii
-    data = data.decode()
-    if not data: 
-        break
-    
-    # if client sends "snap", then read the camera and take a snapshot
-    if data == "snap":
-        ret, frame = cam.read()
-        print("Taking Pic")
-        takeSnapshot()
-        processImage()
-        
-        xLocation = str(averageX) + 'p'; # send this to processing
-        connection.send(xLocation.encode())
+    # CLIENT CONNECTED
+    while True:
+        data = connection.recv(1024) # this line will loop
 
-    elif data == "move":
-        # this while loop may not be needed, remove if necessary
-        while newLocation == "":
-            newLocation = connection.recv(1024)
-        
-        newLocation = newLocation.decode()
-
-        if not newLocation:
+        # decodes data to ascii
+        data = data.decode()
+        if not data: 
+            print("client at", address, "has disconnected")
             break
         
-        # this takes newLocation and removes p
-        newLocationArray = list(newLocation)
+        # if client sends "snap", then read the camera and take a snapshot
+        if data == "snap":
+            ret, frame = cam.read()
 
+            takeSnapshot()
+            xLocationInt = processImage()
 
-        # call the hardware function here (sean)
-        print(newLocation)
+            xLocation = str(xLocationInt) + 'p'; # send this to processing
+            sleep(0.1)
+            
+            connection.send(xLocation.encode())
 
-        #resets the newLocation variable
-        newLocation = ""
+            print(xLocation) 
+
+        elif data == "move":
+            while newLocation == "":
+                newLocation = connection.recv(1024)
+            
+            newLocation = newLocation.decode()
+            
+            # this takes newLocation and removes p
+            newLocationArray = list(newLocation)
+            newLocationArray.pop()
+
+            newLocation = ''
+
+            for i in range(len(newLocationArray)):
+                newLocation = newLocation + newLocationArray[i] 
+
+            # call the hardware function here (sean)
+            print(newLocation)
+
+            #resets the newLocation variable
+            newLocation = ""
 
 connection.close()
 

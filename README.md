@@ -13,7 +13,10 @@ The StrongArm platform is built to be a simulation for the actual shipyard. Esse
 
 ![alt text](opencv_frame.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Sample computer vision frame
+
+To use this product, please refer to our user manual:
+https://docs.google.com/document/d/1IBoCJequiSFqITuXN23gAgejYG0clhTA1TldQzqMFVI/edit?usp=sharing
 
 
 ### What was used? (Tech Stack)

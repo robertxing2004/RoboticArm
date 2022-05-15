@@ -11,7 +11,7 @@ newLocation = ""
 # ---------------------
 
 def takeSnapshot():
-    img_name = "opencv_frame.png"
+    img_name = "RoboticArm/opencv_frame.png"
     cv2.imwrite(img_name, frame)
     print("snapshot taken")
 

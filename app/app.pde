@@ -6,7 +6,7 @@ Client myClient;
 boolean send;
 boolean sendToHardware;
 String dataIn;
-byte[] byteBuffer = new byte[1024];
+byte[] byteBuffer = new byte[1024];;
 
 String data;
 int xLocation = 489;
